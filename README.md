@@ -14,6 +14,6 @@ the maximum score its 50
 
 # TODO
 
-* Signup and Signing in using Facebook
+* Signup and Signing using Facebook
 * Store the Maximum palyer score and set on score history;
 * create a raking score for each game player;
