@@ -2,9 +2,9 @@
 ![alt text](https://github.com/Dnhatsave/dicegame/blob/master/vendor/img/mac2.jpg?raw=true)
 
 
-my first game app using Javascript
 
-Dice Game it's my first application  written use a pure Javascript ES6 and HTML.
+
+Dice Game it's my first game  written use a pure Javascript ES6 and HTML.
 The project its fully openSource and fell free to contributte
 
 # Usage
