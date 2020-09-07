@@ -1,5 +1,5 @@
 # Dice Game
-![alt text](https://github.com/Dnhatsave/dicegame/blob/master/vendor/img/mac.jpg?raw=true)
+![alt text](https://github.com/Dnhatsave/dicegame/blob/master/vendor/img/mac2.jpg?raw=true)
 
 
 my first game app using Javascript
