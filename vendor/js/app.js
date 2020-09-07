@@ -31,16 +31,23 @@ init();
     if(gamePlaying){
        // 1. Random a number 1 - 6
     var dice = Math.floor(Math.random() * 6 + 1);
+    var dice2 = Math.floor(Math.random() * 6 + 1);
+
     
-    //2. Display the result
+    //2. Display the result 
     var diceDOM = document.querySelector('.dice');
     diceDOM.style.display = 'block';
     diceDOM.src= 'vendor/img/dice-' + dice + '.png';
+
+    var dice2DOM = document.querySelector('.dice2');
+    dice2DOM.style.display = 'block';
+    dice2DOM.src= 'vendor/img/dice-' + dice2 + '.png';
+
     
     //3. Update the round score IF the rolled number was NOT a 1
-    if (dice !== 1){
+    if (dice !== 1 && dice2 !== 1){
         //Add score
-        roundScore += dice;
+        roundScore = dice + dice2;
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     } else{
         //Next player 
@@ -54,12 +61,19 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
     if(gamePlaying){
     //Add the current score to blobal score
     scores[activePlayer] += roundScore;
+    var scoreValue = document.getElementById('score-value').value;
+    var winner;
+    if(scoreValue){
+        winner = scoreValue;
+      }else{
+        winner = 25;
+      }
     
     // Update de UI
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
     // Check if player won the game
-    if (scores[activePlayer] >= 50){
+    if (scores[activePlayer] >= winner){
         document.querySelector('#name-' + activePlayer).textContent= "Winner!";
         document.querySelector('.dice').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -87,6 +101,7 @@ function nextPlayer(){
     //document.querySelector('.player-1-panel').classList.add('active');
 
     document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.dice2').style.display = 'none';
 }
 
 document.querySelector('.btn-new').addEventListener('click', init);
@@ -100,6 +115,7 @@ function init(){
 
      // change css tag hide the dice
      document.querySelector('.dice').style.display = 'none';
+     document.querySelector('.dice2').style.display = 'none';
  
      document.getElementById('score-0').textContent   = '0';
      document.getElementById('score-1').textContent   = '0';
